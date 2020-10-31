@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-3.1.0.min.js"
+    ></script>
+    <title>MyPortfolio</title>
+  </head>
+  <body>
+    <header id="header">
+      <ul>
+        <li class="scroll"><a href="#about"> about </a></li>
+        <li class="scroll"><a href="#skills"> skills </a></li>
+        <li class="scroll"><a href="#works"> works </a></li>
+      </ul>
+    </header>
+    <div id="main">
+      <div id="main-visual">
+        <h1>
+          <span>Tomoya</span><br />
+          <span>Kimura</span> no<br />
+          Portfolio Site
+        </h1>
+      </div>
+      <div id="about">
+        <div class="wrapper">
+          <h2 class="heading">ABOUT</h2>
+          <div class="item">
+            <div class="sub-heading">名前 <span>:</span></div>
+            <div class="txt-content">木村智弥</div>
+          </div>
+
+          <div class="item">
+            <div class="sub-heading">高校時代 :</div>
+            <div class="txt-content">
+              部活動でサッカーに打ち込んでいました。練習は大変でしたが、仲間と切磋琢磨しながら、3年間やりきることができました。その結果、県ベスト4になることができました。
+            </div>
+          </div>
+          <div class="item">
+            <div class="sub-heading">大学時代 :</div>
+            <div class="txt-content">
+              現代福祉学部で社会的排除や地域福祉について学びました。その中で、「こども食堂」について興味を持ちました。貧困で十分な食事を取ることができなかったり、両親が共働きで、帰ってきたら一人でご飯を食べなければいけない子供達がいます。そんな彼らに、食事や居場所を提供するのがこども食堂です。こども食堂について調べる中で、その存在や取り組み、課題などを広く伝えているのがWebサイトだと気づきました。分野問わず、様々なことを伝え、影響を与えることができるWebに興味を持ち、Web制作の勉強を始めました。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="skills">
+        <div class="wrapper">
+          <h2 class="heading">SKILLS</h2>
+          <div class="item">
+            <div class="sub-heading">HTML&CSS</div>
+            <div class="txt-content">
+              コーディングができます。最近では、無駄なコーディングを減らすことができるようになってきました。
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="sub-heading">JavaScript</div>
+            <div class="txt-content">
+              アコーディオンやハンバーガーメニューなどを作ることができます。
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="sub-heading">responsive対応</div>
+            <div class="txt-content">
+              iPadやスマホサイズでも問題なくサイトを見られるようにできます。
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="sub-heading">photoshop</div>
+            <div class="txt-content">
+              デザインカンプを作成することができます。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="works">
+        <div class="wrapper">
+          <h2 class="heading">WORKS</h2>
+          <div class="item-wrapper">
+            <div class="item">
+              <a href="https://t-k-soccer.github.io/works_university/">
+                <div class="img-wrapper">
+                  <img src="images/university.jpg" alt="" />
+                </div>
+                <div class="btn">
+                  <a href=""> 大学Webサイト </a>
+                </div>
+              </a>
+            </div>
+            <div class="item">
+              <a href="https://t-k-soccer.github.io/works_fitness/">
+                <div class="img-wrapper">
+                  <img src="images/fitness.jpg" alt="" />
+                </div>
+                <div class="btn">
+                  <a href=""> フィットネスジムWebサイト </a>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // const links = document.querySelectorAll('a[href^="#"]');
+      // for (let i = 0; i < links.length; i++) {
+      //   links[i].addEventListener("click", (e) => {
+      //     e.preventDefault();
+
+      //     var speed = 400;
+      //     var href = this.attr("href");
+      //     var target = href == "#" || href == "" ? "html" : href;
+      //     var position = target.offset().top;
+      //     var body = document.body;
+      //     var html = document.documentElement;
+      //     body.animate({ scrollTop: position }, speed, "swing");
+      //     return false;
+      //   });
+      // }
+
+      $(function () {
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function () {
+          // スクロールの速度
+          var speed = 400; // ミリ秒で記述
+          var href = $(this).attr("href");
+          var target = $(href == "#" || href == "" ? "html" : href);
+          var position = target.offset().top;
+          $("body,html").animate({ scrollTop: position }, speed, "swing");
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>
