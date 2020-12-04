@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <!-- <script
       type="text/javascript"
       src="http://code.jquery.com/jquery-3.1.0.min.js"
     ></script> -->
+
     <script src="jquery.min.js"></script>
     <title>MyPortfolio</title>
   </head>
@@ -44,7 +50,7 @@
           <div class="item">
             <div class="sub-heading">大学時代 :</div>
             <div class="txt-content">
-              現代福祉学部で社会的排除や地域福祉について学びました。その中で、「こども食堂」について興味を持ちました。貧困で十分な食事を取ることができなかったり、両親が共働きで、帰ってきたら一人でご飯を食べなければいけない子供達がいます。そんな彼らに、食事や居場所を提供するのがこども食堂です。こども食堂について調べる中で、その存在や取り組み、課題などを広く伝えているのがWebサイトだと気づきました。分野問わず、様々なことを伝え、影響を与えることができるWebに興味を持ち、Web制作の勉強を始めました。
+              現代福祉学部で社会的排除や地域福祉について学びました。その中で、「こども食堂」について興味を持ちました。貧困で十分な食事を取ることができなかったり、両親が共働きで、帰ってきたら一人でご飯を食べなければいけない子供達がいます。そんな彼らに、食事や居場所を提供するのがこども食堂です。こども食堂について調べる中で、その存在や取り組み、課題などを広く伝えているWebサイトに魅力を感じました。分野問わず、様々なことを伝え、影響を与えることができるWebに興味を持ち、独学とスクールを通してポートフォリオ作成まで学びました。
             </div>
           </div>
         </div>
@@ -55,7 +61,7 @@
           <div class="item">
             <div class="sub-heading">HTML&CSS</div>
             <div class="txt-content">
-              コーディングができます。最近では、無駄なコーディングを減らすことができるようになってきました。
+              LP作成など、コーディングができます。最近では、無駄なコーディングを減らすことができるようになってきました。
             </div>
           </div>
 
@@ -76,7 +82,13 @@
           <div class="item">
             <div class="sub-heading">photoshop</div>
             <div class="txt-content">
-              デザインカンプを作成することができます。
+              画像の切り抜きや編集など基本操作ができ、デザインカンプを作成することができます。
+            </div>
+          </div>
+          <div class="item">
+            <div class="sub-heading">Illustrator</div>
+            <div class="txt-content">
+              基本操作を行うことができます。名刺やパンフレットなどを作成することができます。
             </div>
           </div>
         </div>
@@ -105,30 +117,44 @@
                 </div>
               </a>
             </div>
+            <div class="item modal-item">
+              <!-- <a href="#"> -->
+              <div class="img-wrapper modal-img-wrapper">
+                <img src="images/My-meisi-top.png" alt="" />
+              </div>
+              <div class="btn">
+                <a href=""> 名刺 </a>
+              </div>
+              <!-- </a> -->
+            </div>
           </div>
+          <div class="modal">
+            <div class="bigimg">
+              <img src="" alt="" />
+            </div>
+            <p class="close-btn"><a href="">✖</a></p>
+          </div>
+          <div id="copy-right">©️2020 Kimura-Portfolio</div>
         </div>
-        <div id="copy-right">©️2020 Kimura-Portfolio</div>
       </div>
     </div>
 
     <script>
-      // const links = document.querySelectorAll('a[href^="#"]');
-      // for (let i = 0; i < links.length; i++) {
-      //   links[i].addEventListener("click", (e) => {
-      //     e.preventDefault();
-
-      //     var speed = 400;
-      //     var href = this.attr("href");
-      //     var target = href == "#" || href == "" ? "html" : href;
-      //     var position = target.offset().top;
-      //     var body = document.body;
-      //     var html = document.documentElement;
-      //     body.animate({ scrollTop: position }, speed, "swing");
-      //     return false;
-      //   });
-      // }
-
       $(function () {
+        $(".modal-img-wrapper").click(function () {
+          var imgSrc = $(this).children().attr("src").replace("-top", "");
+          $(".bigimg").children().attr("src", imgSrc);
+          $(".modal").fadeIn();
+          $("body,html").css("overflow-y", "hidden");
+          return false;
+        });
+
+        $(".close-btn").click(function () {
+          $(".modal").fadeOut();
+          $("body,html").css("overflow-y", "visible");
+          return false;
+        });
+
         // #で始まるリンクをクリックしたら実行されます
         $('a[href^="#"]').click(function () {
           // スクロールの速度
